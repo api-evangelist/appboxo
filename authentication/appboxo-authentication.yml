@@ -1,0 +1,74 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/host-apps/BoxoConnect + /host-apps/BoxoPayments + /host-apps/Signaturing
+docs: https://docs.boxo.io/host-apps/BoxoConnect
+summary:
+  types: [http-basic, bearer-token, oauth2-sso, request-signing]
+  api_key_in: [header]
+  notes: >
+    Appboxo (Boxo) is a superapp/miniapp platform. There is no single public REST
+    API with OAuth scopes; auth spans three surfaces: (1) the miniapp<->host JS SDK
+    bridge session token, (2) server-to-server integration auth between the Boxo
+    Platform and host-app backends, and (3) cryptographic request signaturing.
+schemes:
+  - name: hostapp_basic
+    type: http
+    scheme: basic
+    location: header
+    header: Authorization
+    format: "<prefix> base64(hostapp_client_id:hostapp_secret_key)"
+    default_prefix: Token
+    used_on:
+      - Get access token (Boxo Connect)
+      - Create Order Payment endpoint (Boxo Payments)
+      - Get Order Payment Status endpoint (Boxo Payments)
+    source: https://docs.boxo.io/host-apps/BoxoPayments
+  - name: hostapp_access_token
+    type: http
+    scheme: bearer
+    location: header
+    header: Authorization
+    format: "<prefix> <access_token>"
+    default_prefix: Token
+    notes: >
+      Access token (+ optional refresh token) obtained via the Boxo Connect
+      "Get access token" exchange; can be used in place of Basic auth on payment
+      requests when "Use access token" is enabled in the Dashboard.
+    source: https://docs.boxo.io/host-apps/BoxoConnect
+  - name: boxo_connect_sso
+    type: oauth2
+    grant: authorization_code
+    description: >
+      Boxo Connect is a Single Sign-On flow. The host app issues an authorization
+      code to the Boxo native SDK; the Boxo Platform exchanges it at the host-app
+      backend for an access_token/refresh_token, retrieves user data, and returns a
+      miniapp session token. There are no published OAuth scopes.
+    tokens: [auth_code, access_token, refresh_token, session_token]
+    source: https://docs.boxo.io/host-apps/BoxoConnect
+  - name: miniapp_session_token
+    type: http
+    scheme: bearer
+    description: >
+      Session token returned to the miniapp after Boxo.login(); saved/cleared in the
+      host app via the JS SDK (AppBoxoWebAppSaveToken / AppBoxoWebAppClearToken /
+      AppBoxoWebAppLogin / AppBoxoWebAppLogout).
+    source: https://docs.boxo.io/MiniApp%20API%20Reference/AuthenticationAPIRef
+  - name: request_signaturing
+    type: request-signing
+    description: >
+      Server-to-server requests can be signed and verified. Configurable algorithm
+      (RSA2 / HMAC / ECDSA), hash function (MD5/SHA-1/SHA-224/SHA-256/SHA-384/SHA-512),
+      key format (PEM/DER for RSA2/ECDSA), plus timestamp, optional nonce, identity,
+      client_id and merchant_id in a configurable headers map and signature payload
+      template. Default headers: X-Signature, X-Timestamp, X-Client-Id, X-Nonce,
+      X-Identity, X-Merchant-Id.
+    algorithms: [RSA2, HMAC, ECDSA]
+    hash_functions: [MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512]
+    source: https://docs.boxo.io/host-apps/Signaturing
+  - name: ip_whitelisting
+    type: network
+    description: >
+      Alternative/complement to request signing for the Boxo->miniapp complete-order
+      webhook: the miniapp backend whitelists Boxo Platform egress IPs.
+    boxo_egress_ips: [54.254.31.251, 18.136.51.105]
+    source: https://docs.boxo.io/host-apps/Whitelisting
