@@ -1,0 +1,63 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/
+summary: >
+  Cross-cutting request/response semantics for the Appboxo (Boxo) superapp platform,
+  spanning the miniapp<->host JS SDK bridge and the server-to-server integration
+  endpoints (Boxo Connect SSO + Boxo Payments).
+authentication:
+  see: authentication/appboxo-authentication.yml
+  styles: [http-basic, bearer-token, oauth2-sso, request-signing, ip-whitelisting]
+data_format:
+  media_type: application/json
+  decimals: >
+    Decimal money values may be sent as float, number, or string; max 20 total digits,
+    up to 2 digits after the decimal point.
+request_signing:
+  supported: true
+  algorithms: [RSA2, HMAC, ECDSA]
+  hash_functions: [MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512]
+  default_headers:
+    signature: X-Signature
+    timestamp: X-Timestamp
+    client_id: X-Client-Id
+    nonce: X-Nonce
+    identity: X-Identity
+    merchant_id: X-Merchant-Id
+  payload_template_fields: [timestamp, nonce, identity, client_id, merchant_id, request_method, url, payload]
+  encoding_options: [base64, hex, plain-text]
+  source: https://docs.boxo.io/host-apps/Signaturing
+idempotency:
+  documented_key_header: false
+  notes: >
+    Boxo does NOT document a dedicated Idempotency-Key header. Payment de-duplication
+    is achieved by stable identifiers: `miniapp_order_id` (from the miniapp) and
+    `order_payment_id` (from the host app) correlate a single payment across the
+    create / status / complete-order webhook lifecycle.
+pagination:
+  style: offset-count
+  surfaces:
+    - operation: AppBoxoWebAppStorageGetKeys
+      params: {count: "max 1000", offset: "default 0"}
+  source: https://docs.boxo.io/MiniApp%20API%20Reference/APIReference
+tracing:
+  request_id: >
+    Custom events carry a caller-supplied `request_id` correlation field
+    (see Custom Events System / Testing Host App examples).
+error_envelope:
+  fields: [error_code, error_message]
+  format: custom (not RFC 9457)
+  see: errors/appboxo-error-codes.yml
+events:
+  model: >
+    The JS SDK is an event bridge: send(method, params) / sendPromise(method, params)
+    to the native host, subscribe(fn)/unsubscribe(fn) to receive results and native
+    events. Custom events pass an arbitrary { type, payload } to the host app.
+  see: components/appboxo-components.yml
+webhooks:
+  see: asyncapi/appboxo-webhooks.yml
+rate_limiting:
+  documented: false
+  notes: >
+    No published rate-limit headers. A PLAN_LIMIT_REACHED error indicates
+    plan-tier usage caps enforced at the account/plan level.

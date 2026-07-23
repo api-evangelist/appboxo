@@ -1,0 +1,54 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/host-apps/BoxoPayments + /host-apps/BoxoConnect
+spec_type: Webhooks
+description: >
+  Appboxo (Boxo) publishes no AsyncAPI document, but its integration model is a set of
+  HTTPS callbacks (webhooks) between the Boxo Platform and host-app / miniapp backends.
+  Security is per-call: request signaturing (RSA2/HMAC/ECDSA) and/or Boxo-egress-IP
+  whitelisting (54.254.31.251, 18.136.51.105). Payloads are JSON.
+webhooks:
+  - name: complete-order
+    direction: boxo-platform -> miniapp-backend
+    method: POST
+    path: /api/v1/orders/complete-order/
+    description: >
+      Fired after a payment is processed to complete the order payment on the miniapp
+      server. Secured by IP whitelisting or request signaturing.
+    payload_fields: [order_payment_id, app_id, client_id, payment_status, payment_fail_reason, custom_attributes]
+    payment_status_enum: [in_process, paid, cancelled, failed]
+    source: https://docs.boxo.io/host-apps/BoxoPayments
+  - name: create-order-payment
+    direction: boxo-platform -> hostapp-backend
+    method: POST
+    description: >
+      Boxo Platform calls the host-app endpoint to create an order payment; the host app
+      returns an order_payment_id. Secured by Basic/Token auth + signaturing.
+    payload_fields: [app_id, order]
+    source: https://docs.boxo.io/host-apps/BoxoPayments
+  - name: get-order-payment-status
+    direction: boxo-platform -> hostapp-backend
+    method: POST
+    description: Boxo Platform polls the host-app endpoint for an order payment status.
+    payload_fields: [app_id, client_id, order_payment_id]
+    source: https://docs.boxo.io/host-apps/BoxoPayments
+  - name: get-access-token
+    direction: boxo-platform -> hostapp-backend
+    method: POST
+    description: >
+      Boxo Connect SSO: Boxo Platform exchanges an auth_code at the host-app backend for
+      an access_token/refresh_token.
+    payload_fields: [auth_code]
+    source: https://docs.boxo.io/host-apps/BoxoConnect
+  - name: payment_event (SDK)
+    direction: boxo-native-sdk -> host-app (client-side)
+    description: >
+      Native SDK payment event delivered to the host app (didReceivePaymentEvent /
+      setPaymentEventListener / paymentEvents), answered with a payment status result
+      back to the miniapp.
+    payload_fields: [order_payment_id, miniapp_order_id, amount, currency, status, extra_params]
+    source: https://docs.boxo.io/host-apps/BoxoPayments
+  - name: AppBoxoWebAppTrack (postback)
+    direction: miniapp -> host-app -> tracker
+    description: Transaction postback tracking data (action=transaction) forwarded by the host app.
+    source: https://docs.boxo.io/MiniApp%20API%20Reference/APIReference

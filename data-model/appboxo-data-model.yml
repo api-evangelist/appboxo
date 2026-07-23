@@ -1,0 +1,41 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/host-apps/BoxoPayments + /host-apps/BoxoConnect
+description: >
+  Entity graph derived from the Boxo Connect and Boxo Payments integration object
+  reference. Boxo intermediates between a HostApp (the super app) and a Miniapp; a
+  Partnership binds them and carries the enabled integrations/signing settings.
+entities:
+  - name: HostApp
+    identifier: client_id (hostapp_client_id)
+    fields: [client_id, hostapp_secret_key, endpoint_urls, signing_settings]
+  - name: Miniapp
+    identifier: app_id
+    fields: [app_id, category]
+  - name: Partnership
+    description: Binds a HostApp and a Miniapp; carries enabled integrations, merchant_id, signing config.
+    fields: [merchant_id, integrations_enabled]
+  - name: HostAppUser
+    identifier: hostapp_user_id
+    fields: [hostapp_user_id, profile_data]
+  - name: Order
+    fields: [currency, amount, subtotal_amount, shipping_amount, discount_amount, tax_title, tax_amount, taxes_included, note, custom_attributes, miniapp_order_id, hostapp_user_id]
+  - name: OrderPayment
+    identifier: order_payment_id
+    fields: [order_payment_id, payment_status, payment_fail_reason, custom_attributes]
+    status_enum: [in_process, paid, cancelled, failed]
+  - name: OrderItem
+    fields: [product_name, product_variant_name, product_sku, product_image_url, quantity, price, discount]
+  - name: OrderShippingAddress
+    fields: [address1, address2, first_name, last_name, phone, region_name, region_code, province_name, province_code, city, country, postal_code, latitude, longitude]
+  - name: AccessToken
+    fields: [access_token, refresh_token]
+relationships:
+  - {from: Partnership, type: belongs_to, to: HostApp, via: client_id}
+  - {from: Partnership, type: belongs_to, to: Miniapp, via: app_id}
+  - {from: Order, type: belongs_to, to: Miniapp, via: app_id}
+  - {from: Order, type: belongs_to, to: HostAppUser, via: hostapp_user_id}
+  - {from: Order, type: has_many, to: OrderItem, via: items}
+  - {from: Order, type: has_one, to: OrderShippingAddress, via: shipping_address}
+  - {from: OrderPayment, type: belongs_to, to: Order, via: miniapp_order_id}
+  - {from: AccessToken, type: belongs_to, to: HostAppUser, via: auth_code}

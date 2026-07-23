@@ -1,0 +1,54 @@
+# Boxo Documentation
+
+## Docs
+
+- [API Reference](https://boxo.mintlify.app/MiniApp API Reference/APIReference.md)
+- [Authentication API Reference](https://boxo.mintlify.app/MiniApp API Reference/AuthenticationAPIRef.md)
+- [Events API Reference](https://boxo.mintlify.app/MiniApp API Reference/EventsAPI.md)
+- [Android](https://boxo.mintlify.app/changelog/android.md)
+- [Capacitor JS](https://boxo.mintlify.app/changelog/capacitor.md)
+- [Expo](https://boxo.mintlify.app/changelog/expo.md)
+- [Flutter](https://boxo.mintlify.app/changelog/flutter.md)
+- [iOS SDK](https://boxo.mintlify.app/changelog/ios-sdk.md)
+- [React Native](https://boxo.mintlify.app/changelog/react-native-sdk.md)
+- [Boxo Connect](https://boxo.mintlify.app/host-apps/BoxoConnect.md)
+- [Boxo Payments](https://boxo.mintlify.app/host-apps/BoxoPayments.md)
+- [Boxo SDK](https://boxo.mintlify.app/host-apps/BoxoSDK.md)
+- [Custom Events System](https://boxo.mintlify.app/host-apps/CES.md)
+- [Deeplinks](https://boxo.mintlify.app/host-apps/DeepLink.md)
+- [Error Codes](https://boxo.mintlify.app/host-apps/ErrorCodes.md)
+- [Getting Started](https://boxo.mintlify.app/host-apps/GettingStarted.md)
+- [Android / iOS Sample Host App](https://boxo.mintlify.app/host-apps/SampleHostApp.md)
+- [Security measures](https://boxo.mintlify.app/host-apps/SecurityMeasures.md)
+- [Request Signaturing](https://boxo.mintlify.app/host-apps/Signaturing.md)
+- [Testing Host App](https://boxo.mintlify.app/host-apps/Testing.md)
+- [Whitelisting](https://boxo.mintlify.app/host-apps/Whitelisting.md)
+- [Introduction](https://boxo.mintlify.app/host-apps/introduction.md)
+- [Key Principles](https://boxo.mintlify.app/host-apps/keyPrinciples.md)
+- [Start Building](https://boxo.mintlify.app/main/homepage.md)
+- [eSIM Integration](https://boxo.mintlify.app/mini-apps/esim/integration.md)
+- [Miniapp Analytics](https://boxo.mintlify.app/miniapp/Analytics.md)
+- [Custom Events](https://boxo.mintlify.app/miniapp/CES.md)
+- [Boxo Connect](https://boxo.mintlify.app/miniapp/Connect.md)
+- [Design - UI/UX of Miniapps](https://boxo.mintlify.app/miniapp/Design.md)
+- [Error Codes](https://boxo.mintlify.app/miniapp/Error.md)
+- [Getting Started](https://boxo.mintlify.app/miniapp/GettingStarted.md)
+- [Introduction](https://boxo.mintlify.app/miniapp/Intro.md)
+- [Key Principles](https://boxo.mintlify.app/miniapp/KeyP.md)
+- [Native Components](https://boxo.mintlify.app/miniapp/Native.md)
+- [Boxo Payments](https://boxo.mintlify.app/miniapp/Payment.md)
+- [Miniapp Performance](https://boxo.mintlify.app/miniapp/Perf.md)
+- [Security Measures](https://boxo.mintlify.app/miniapp/Security.md)
+- [Miniapp Settings](https://boxo.mintlify.app/miniapp/Settings.md)
+- [Request Signaturing](https://boxo.mintlify.app/miniapp/Signaturing.md)
+- [Testing](https://boxo.mintlify.app/miniapp/Testing.md)
+- [Miniapp White-labeling](https://boxo.mintlify.app/miniapp/WhiteLabel.md)
+
+## OpenAPI Specs
+
+- [openapi](https://boxo.mintlify.app/api-reference/openapi.json)
+- [eSIM_API_v1](https://boxo.mintlify.app/esim-api-reference/eSIM_API_v1.yaml)
+
+## Optional
+
+- [UI Kit](https://docs.boxo.io/ui-kit/)

@@ -1,0 +1,38 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/changelog/
+scheme: semver-per-sdk
+notes: >
+  Appboxo (Boxo) maintains a separate dated changelog per platform SDK rather than a
+  single API version. The server integration API is pinned at URI path /api/v1/.
+current_versions:
+  ios: '1.27.6'          # 2026-05-14
+  android: '1.42.0'      # 2026-05-29
+  flutter: '0.16.1'
+  react_native: '1.13.1'
+  expo: '0.13.1'
+  capacitor: '0.13.1'
+changelogs:
+  ios: https://docs.boxo.io/changelog/ios-sdk
+  android: https://docs.boxo.io/changelog/android
+  flutter: https://docs.boxo.io/changelog/flutter
+  react_native: https://docs.boxo.io/changelog/react-native-sdk
+  expo: https://docs.boxo.io/changelog/expo
+  capacitor: https://docs.boxo.io/changelog/capacitor
+recent_entries:
+  - sdk: ios
+    version: '1.27.6'
+    date: '2026-05-14'
+    highlights: [Add Lottie animation as a miniapp loader]
+  - sdk: ios
+    version: '1.26.1'
+    date: '2026-04-27'
+    highlights: [Fixes]
+  - sdk: ios
+    version: '1.26.0'
+    date: '2026-02-27'
+    highlights: [Additions]
+  - sdk: android
+    version: '1.42.0'
+    date: '2026-05-29'
+    highlights: [Latest Android host-app SDK release]

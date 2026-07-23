@@ -1,7 +1,15 @@
 aid: appboxo
 name: Appboxo
-description: Appboxo is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Appboxo (Boxo) is a superapp / miniapp platform that lets any mobile app embed third-party
+  services as native-feeling miniapps through a single integration. It ships host-app SDKs for
+  iOS, Android, Flutter, React Native, Expo and Capacitor plus a web JavaScript SDK bridge that
+  exposes native UI (tab bar, navigation bar, action sheets, QR reader, maps) and device
+  capabilities to web miniapps. The Boxo Platform provides server-to-server integrations —
+  Boxo Connect (SSO / user authorization), Boxo Payments (in-app order payments with host-app
+  callbacks), custom events, and configurable request signaturing (RSA2 / HMAC / ECDSA) — so a
+  host app can launch new services (eSIM, marketplace, remittance, insurance, travel, loyalty)
+  far faster than building them in-house. Appboxo is a portfolio company of 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/appboxo/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +17,33 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
+image: https://framerusercontent.com/assets/LHGWxAyjSr0ojCUUO5aqzWZOASs.png
 tags:
 - Company
+- Super App
+- Miniapps
+- Mobile SDK
+- Embedded Finance
+- Payments
+- Single Sign-On
+- App Platform
+- eSIM
+- Developer Tools
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +51,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/appboxo-domain-security.yml
 - type: Website
   url: https://appboxo.com
+- type: DeveloperPortal
+  url: https://dashboard.boxo.io
+- type: Documentation
+  url: https://docs.boxo.io
+- type: APIReference
+  url: https://docs.boxo.io/MiniApp%20API%20Reference/APIReference
+- type: GettingStarted
+  url: https://docs.boxo.io/host-apps/GettingStarted
+- type: Blog
+  url: https://www.boxo.io/blog
+- type: GitHubOrganization
+  url: https://github.com/Appboxo
+- type: Support
+  url: https://www.boxo.io/contact
+- type: SignUp
+  url: https://dashboard.boxo.io/login
+- type: TermsOfService
+  url: https://www.boxo.io/terms
+- type: PrivacyPolicy
+  url: https://www.boxo.io/privacy
+- type: Packages
+  url: packages/appboxo-packages.yml
+- type: SDKs
+  url: packages/appboxo-packages.yml
+- type: LLMsTxt
+  url: llms/appboxo-llms.txt
+- type: ErrorCatalog
+  url: errors/appboxo-error-codes.yml
+- type: Authentication
+  url: authentication/appboxo-authentication.yml
+- type: Conventions
+  url: conventions/appboxo-conventions.yml
+- type: ChangeLog
+  url: changelog/appboxo-changelog.yml
+- type: Components
+  url: components/appboxo-components.yml
+- type: Webhooks
+  url: asyncapi/appboxo-webhooks.yml
+- type: Sandbox
+  url: sandbox/appboxo-sandbox.yml
+- type: DataModel
+  url: data-model/appboxo-data-model.yml
+- type: Lifecycle
+  url: lifecycle/appboxo-lifecycle.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

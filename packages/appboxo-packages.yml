@@ -1,0 +1,77 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/ + npm/pub.dev/CocoaPods/GitHub
+packages:
+  - language: javascript
+    registry: npm
+    name: "@appboxo/js-sdk"
+    version: 2.2.0
+    url: https://www.npmjs.com/package/@appboxo/js-sdk
+    install: npm install @appboxo/js-sdk
+    author: Appboxo pte. ltd.
+    description: JavaScript SDK (bridge) for the Appboxo/Boxo miniapp platform.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@appboxo/react-native-sdk"
+    version: 1.14.0
+    url: https://www.npmjs.com/package/@appboxo/react-native-sdk
+    install: npm install @appboxo/react-native-sdk
+    author: Appboxo pte. ltd.
+    description: BoxoSDK plugin for React Native host apps.
+    official: true
+  - language: dart
+    registry: pub.dev
+    name: appboxo_sdk
+    version: 0.17.0
+    url: https://pub.dev/packages/appboxo_sdk
+    install: flutter pub add appboxo_sdk
+    publisher: appboxo.com
+    verified_publisher: true
+    description: Flutter plugin to integrate the BoxoSDK for iOS and Android.
+    official: true
+  - language: swift
+    registry: cocoapods
+    name: AppBoxoSDK
+    version: 1.9.3
+    url: https://cocoapods.org/pods/AppBoxoSDK
+    install: pod 'AppBoxoSDK'
+    description: Native iOS SDK for embedding Boxo miniapps (Swift/Objective-C).
+    official: true
+  - language: swift
+    registry: github
+    name: boxo-ios-spm
+    url: https://github.com/Appboxo/boxo-ios-spm
+    install: "Swift Package Manager: https://github.com/Appboxo/boxo-ios-spm"
+    description: Boxo iOS SDK distributed via Swift Package Manager.
+    official: true
+  - language: objective-c
+    registry: github
+    name: boxo-ios-sdk
+    url: https://github.com/Appboxo/boxo-ios-sdk
+    license: Apache-2.0
+    description: Boxo native iOS SDK source.
+    official: true
+  - language: kotlin
+    registry: github
+    name: expo-boxo-sdk
+    url: https://github.com/Appboxo/expo-boxo-sdk
+    description: Expo module wrapping the Boxo native SDKs.
+    official: true
+  - language: typescript
+    registry: github
+    name: capacitor-appboxo-sdk
+    url: https://github.com/Appboxo/capacitor-appboxo-sdk
+    description: Capacitor plugin for the Boxo SDK.
+    official: true
+  - language: kotlin
+    registry: github
+    name: android-boxo-stripe-sdk
+    url: https://github.com/Appboxo/android-boxo-stripe-sdk
+    description: Boxo Android add-on SDK for Stripe payments.
+    official: true
+notes: >
+  Appboxo (Boxo) ships native host-app SDKs for iOS, Android, Flutter, React Native,
+  Expo and Capacitor plus a web miniapp JS SDK bridge. The npm/pub.dev/CocoaPods
+  packages are first-party (author "Appboxo pte. ltd." / verified publisher appboxo.com).
+  Android/Expo/Capacitor are distributed primarily via the Appboxo GitHub org.

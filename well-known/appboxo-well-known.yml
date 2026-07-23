@@ -1,0 +1,16 @@
+generated: '2026-07-17'
+method: searched
+source: probed /.well-known/ on Appboxo (Boxo) hosts 2026-07-17
+hosts_probed:
+- https://boxo.io
+- https://www.boxo.io
+- https://dashboard.boxo.io
+- https://docs.boxo.io
+documents: []
+result: none
+notes: >
+  No genuine /.well-known/ documents found. boxo.io / www.boxo.io / docs.boxo.io return
+  404 for security.txt, openid-configuration, oauth-authorization-server, api-catalog and
+  ai-plugin.json. dashboard.boxo.io returns HTTP 200 for those paths but the body is the
+  SPA HTML shell (a catch-all), not a valid well-known resource, so nothing was saved and
+  no WellKnown/SecurityTxt pointer is wired.

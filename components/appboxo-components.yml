@@ -1,0 +1,42 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/MiniApp%20API%20Reference/APIReference
+description: >
+  The Boxo JS SDK exposes native, host-rendered UI components and device capabilities
+  to a web miniapp over an event bridge (appboxo.send / sendPromise / subscribe). These
+  are client-side embeddable surfaces distinct from the server-side host-app SDKs in
+  packages/.
+loader:
+  npm: "@appboxo/js-sdk"
+  cdn: https://docs.boxo.io/ (Boxo JS SDK API reference / CDN options)
+families:
+  - family: Navigation & chrome
+    components:
+      - {name: TabBar, events: [AppBoxoWebAppSetTabBar, AppBoxoWebAppTabBarItemClick]}
+      - {name: NavigationBar, events: [AppBoxoWebAppSetNavigationBar]}
+      - {name: ActionButton, events: [AppBoxoWebAppSetActionButton]}
+      - {name: BackgroundColor, events: [AppBoxoWebAppSetBackgroundColor]}
+      - {name: StatusBarColor, events: [AppBoxoWebAppSetStatusBarColor]}
+      - {name: LoadingIndicator, events: [AppBoxoWebAppLoadingIndicator]}
+  - family: Dialogs & sheets
+    components:
+      - {name: Alert, events: [AppBoxoWebAppShowAlert]}
+      - {name: ActionSheet, events: [AppBoxoWebAppShowActionSheet, AppBoxoWebAppActionSheetItemClick]}
+      - {name: ImageGallery, events: [AppBoxoWebAppShowImages]}
+      - {name: Share, events: [AppBoxoWebAppShare]}
+  - family: Device & sensors
+    components:
+      - {name: QRCodeReader, events: [AppBoxoWebAppOpenQRCodeReader, AppBoxoWebAppOpenQRCodeReaderResult, AppBoxoWebAppOpenQRCodeReaderFailed]}
+      - {name: Geolocation, events: [AppBoxoWebAppGetGeodata]}
+      - {name: Map, events: [AppBoxoWebAppChooseLocation, AppBoxoWebAppOpenLocation]}
+      - {name: HapticFeedback, events: [AppBoxoWebAppVibrate]}
+      - {name: Accelerometer, events: [AppBoxoWebAppStartAccelerometer, AppBoxoWebAppStopAccelerometer, AppBoxoWebAppOnAccelerometerChange]}
+      - {name: Gyroscope, events: [AppBoxoWebAppStartGyroscope, AppBoxoWebAppStopGyroscope, AppBoxoWebAppOnGyroscopeChange]}
+      - {name: Compass, events: [AppBoxoWebAppStartCompass, AppBoxoWebAppStopCompass, AppBoxoWebAppOnCompassChange]}
+      - {name: SystemInfo, events: [AppBoxoWebAppGetSystemInfo]}
+  - family: Platform services
+    components:
+      - {name: Storage, events: [AppBoxoWebAppStorageGet, AppBoxoWebAppStorageGetKeys, AppBoxoWebAppStorageSet, AppBoxoWebAppStorageRemove, AppBoxoWebAppStorageClear]}
+      - {name: Clipboard, events: [AppBoxoWebAppGetClipboard, AppBoxoWebAppSetClipboard]}
+      - {name: DownloadFile, events: [AppBoxoWebAppDownloadFile]}
+      - {name: UIKit, url: https://docs.boxo.io/ui-kit/}

@@ -1,0 +1,23 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/
+versioning:
+  server_api:
+    scheme: uri-path
+    current: v1
+    evidence: Boxo Platform complete-order webhook at /api/v1/orders/complete-order/
+  sdks:
+    scheme: semver-per-platform
+    see: changelog/appboxo-changelog.yml
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  notes: >
+    Docs mention platform auto-scaling and a second Availability Zone for zero-downtime
+    disaster recovery (Whitelisting page), but no published uptime SLA.
+status_page: null
+status_page_notes: status.boxo.io does not resolve; no public status page found (probed 2026-07-17).
+deprecated_operations: []

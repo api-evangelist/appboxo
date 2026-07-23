@@ -1,0 +1,24 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/host-apps/Testing + /miniapp/Testing
+description: >
+  Boxo publishes a hosted sample miniapp ("Boxo Store") for exercising Boxo Connect SSO,
+  Custom Events, and the payment flow from a host app in test mode. No test card numbers
+  are published (payments are processed by the host app's own payment system, not Boxo).
+test_miniapp:
+  name: Boxo Store
+  app_id: app36902
+  usage: >
+    Open the Boxo Store sample miniapp with App ID app36902 from a host app to test
+    Boxo Connect (Login in the profile dropdown) and Custom Events (Buy on any product).
+custom_event_fixture:
+  type: buy_from_miniapp
+  payload:
+    currency: USD
+    name: Teapot
+    price: 110
+  request_id: 1
+notes: >
+  Integration features (Boxo Connect, Boxo Payments, request signaturing) are configured
+  per Partnership in the Boxo Dashboard (https://dashboard.boxo.io/partnerships/). Host
+  apps register endpoint URLs, client_id/secret_key, and signing keys there.

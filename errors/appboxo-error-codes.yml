@@ -1,0 +1,92 @@
+generated: '2026-07-17'
+method: searched
+source: https://docs.boxo.io/host-apps/ErrorCodes
+format: custom
+envelope:
+  fields:
+    - error_code   # machine-readable string identifier
+    - error_message
+  notes: >
+    Boxo returns errors as a JSON envelope carrying an `error_code` string (and
+    often `error_message`). On host-app integration endpoints the host returns
+    `{"error_code": "..."}` with HTTP 200; the Boxo complete-order webhook returns
+    HTTP 400 with `error_code`/`error_message`. This is NOT RFC 9457 problem+json.
+errors:
+  - code: NO_INTEGRATION
+    message: No accepted integration exist. Do not retry.
+  - code: NOT_IMPLEMENTED
+    message: Feature is not implemented. Do not retry.
+  - code: PROCESS_FAIL
+    message: General business failure occurred. Do not retry.
+  - code: UNKNOWN_ERROR
+    message: Unknown error. Please try again later.
+  - code: UNEXPECTED_RESPONSE_ERROR
+    message: Unexpected response from the upstream service. See Dashboard Logs for details.
+  - code: EXPIRED_AUTH_CODE
+    message: Auth code expired. Please try again.
+  - code: INVALID_AUTH_CODE
+    message: Invalid auth code. Please try again.
+  - code: EXPIRED_ACCESS_TOKEN
+    message: Access token expired. Please try again.
+  - code: INVALID_ACCESS_TOKEN
+    message: Invalid access token. Please try again.
+  - code: INVALID_USER_DATA
+    message: Invalid user data. Please try again.
+  - code: ACCESS_DENIED
+    message: Access denied.
+  - code: HOSTAPP_NOT_FOUND
+    message: No Hostapp client matches the given query.
+  - code: MINIAPP_NOT_FOUND
+    message: No Miniapp matches the given query.
+  - code: ORDER_NOT_FOUND
+    message: No Order matches the given query.
+  - code: INVALID_PAYMENT_STATUS
+    message: Cannot set this status to order payment.
+  - code: NOT_A_WHITELISTED_IP
+    message: Not a whitelisted IP address. Please provide IP address in Dashboard.
+  - code: INVALID_ORDER_DATA
+    message: Invalid request body.
+  - code: RESPONSE_ATTRIBUTE_MISSING
+    message: "Missing response attribute: {setting}."
+  - code: INVALID_SIGNATURE
+    message: Invalid request signature.
+  - code: MISSING_HEADER
+    message: "Missing required header: {setting}."
+  - code: NOT_IMPLEMENTED_FOR_THIS_MINIAPP_CATEGORY
+    message: Feature not implemented for this Miniapp category.
+  - code: INVALID_RESPONSE_CONTENT_TYPE
+    message: Invalid response content type.
+  - code: MISSING_REQUEST_SIGNATURE_SETTINGS
+    message: Request signature settings are not configured.
+  - code: HOSTAPP_INTEGRATION_NOT_SET
+    message: "Feature not integrated. Enable {setting} in Hostapp settings."
+  - code: MINIAPP_INTEGRATION_NOT_SET
+    message: "Feature not integrated. Enable {setting} in Miniapp settings."
+  - code: INTEGRATION_ENABLED_NOT_SET
+    message: "Feature disabled. Enable {setting} in Integration settings."
+  - code: HOSTAPP_ENABLED_NOT_SET
+    message: "Feature disabled. Enable {setting} in Hostapp settings."
+  - code: FEATURE_DISABLED_IN_HOSTAPP
+    message: "Feature disabled. Enable {setting} in Hostapp settings."
+  - code: FEATURE_DISABLED_IN_MINIAPP
+    message: "Feature disabled. Enable {setting} in Miniapp settings."
+  - code: FEATURE_DISABLED_IN_INTEGRATION
+    message: "Feature disabled. Enable {setting} in Integration settings."
+  - code: PARSING_ERROR_INVALID_REQUEST_BODY
+    message: Failed to parse request body. Ensure it is valid JSON or a stream.
+  - code: FAILED_TO_PARSE_RESPONSE
+    message: Failed to parse response. Ensure it is valid JSON.
+  - code: DATA_INTEGRITY_ERROR
+    message: Data integrity violation.
+  - code: SIGNATURE_VALIDATION_ERROR
+    message: Request signature validation failed.
+  - code: HOSTAPP_USER_ID_REQUIRED
+    message: "Hostapp user ID/reference is required for {setting}."
+  - code: HOSTAPP_USER_NOT_FOUND
+    message: "Hostapp user with hostapp_user_id: {setting} does not exist."
+  - code: INVALID_PAYMENT_STATUS_RESPONSE
+    message: Invalid payment status in Hostapp response.
+  - code: ENDPOINT_URL_NOT_SET
+    message: "Endpoint URL is not configured for {setting}."
+  - code: PLAN_LIMIT_REACHED
+    message: Plan limit reached. Upgrade your plan to continue.
