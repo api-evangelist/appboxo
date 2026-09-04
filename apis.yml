@@ -38,6 +38,7 @@ accessModel:
   confidence: medium
   source:
   - authentication
+  - {url: 'https://appboxo.com', status: 301, note: 'declared website redirects to https://www.boxo.io/ — a different registrable domain (appboxo.com -> boxo.io), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
   generated: '2026-07-22'
   method: derived
 specificationVersion: '0.23'
