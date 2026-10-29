@@ -64,6 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Appboxo is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Appboxo (Boxo) is a superapp / miniapp platform that lets any mobile app embed third-party services as native-feeling miniapps through a single integration. It ships host-app SDKs for iOS, Android, Flutter, React Native, Expo and Capacitor plus a web JavaScript SDK bridge that exposes native UI (tab bar, navigation bar, action sheets, QR reader, maps) and device capabilities to web miniapps. The Boxo Platform provides server-to-server integrations — Boxo Connect (SSO / user authorization), Boxo Payments (in-app order payments with host-app callbacks), custom events, and configurable request signaturing (RSA2 / HMAC / ECDSA) — so a host app can launch new services (eSIM, marketplace, remittance, insurance, travel, loyalty) far faster than building them in-house. Appboxo is a portfolio company of 500 Global.
 
-Backed by: 500-global — https://appboxo.com
+**Areas:** Company · Super App · Mini Apps · Mobile SDK · Embedded Finance · Payments · SSO · App Platform · eSIM · Developer Tools
+
+## Appboxo on APIs.io
+
+Everything profiled for Appboxo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/appboxo/](https://apis.io/providers/appboxo/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Appboxo Webhooks](https://apis.io/asyncapis/appboxo/appboxo-webhooks/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Appboxo Authentication](https://apis.io/security/appboxo/appboxo-authentication/)
+- [Appboxo Domain Security](https://apis.io/security/appboxo/appboxo-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://appboxo.com)
+- [Documentation](https://docs.boxo.io)
+- [Getting started](https://docs.boxo.io/host-apps/GettingStarted)
+- [API reference](https://docs.boxo.io/MiniApp%20API%20Reference/APIReference)
+- [Sign up](https://dashboard.boxo.io/login)
+- [Support](https://www.boxo.io/contact)
+- [Blog](https://www.boxo.io/blog)
+- [Terms of service](https://www.boxo.io/terms)
+- [Privacy policy](https://www.boxo.io/privacy)
+- [GitHub](https://github.com/Appboxo)
+
+## API Evangelist rating
+
+**Kin Score 35.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 39.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 61.9 |
+| Access clarity | 21.1 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 17.9** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/appboxo/](https://apis.io/providers/appboxo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Appboxo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/appboxo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
